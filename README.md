@@ -1,15 +1,15 @@
-# NC extension winston
+# NCE extension winston
 ## Description
-A logger for the nc cms
+A logger for the nce cms
 
 ## How to install
 Install with npm: `npm install --save nce-winston`
 
-Integrate in NC:
+Integrate in NCE:
 
 ```
-var NC = require("nc");
-var nc = new NC(/*{
+var NCE = require("nce");
+var nce = new NCE(/*{
   "winston": {
     levels:{
       error:2,
@@ -34,7 +34,7 @@ var nc = new NC(/*{
   }
 }*/);
 var logger = require("nce-winston");
-var ext = logger(nc);
+var ext = logger(nce);
 ext.install();
 ext.activate();
 ```

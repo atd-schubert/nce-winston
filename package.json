@@ -1,7 +1,7 @@
 {
   "name": "nce-winston",
   "version": "0.0.1",
-  "description": "A logger for the nc cms",
+  "description": "A logger for the nce cms",
   "main": "winston.js",
   "scripts": {
     "test": "mocha"
@@ -12,9 +12,9 @@
   },
   "keywords": [
     "cms",
-    "nc",
-    "middleware",
-    "caching"
+    "nce",
+    "winston",
+    "logger"
   ],
   "author": "Arne Schubert <atd.schubert@gmail.com>",
   "license": "ISC",
@@ -26,7 +26,7 @@
     "winston": "^0.8.3"
   },
   "devDependencies": {
-    "nc":">=0.0.1"
+    "nce":">=0.0.1"
   },
   "peerDependencies": {}
 }
