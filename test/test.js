@@ -50,4 +50,15 @@ describe('Basic functions in NCE', function(){
     if(ext.getLogger("get") === logger) return done();
     return done(new Error("Get incorrect logger"));
   });
+  it('should be able to change logging level', function(done){
+    var logger = ext.getLogger("get");
+    logger.setLevel(1);
+    if(logger.getLevel() === 1) return done();
+    return done(new Error("Logging level is not set correctly"));
+  });
+  it('should create logger with custom config', function(done){
+    var logger = ext.createLogger("config", {level: 0});
+    if(logger.getLevel() === 0) return done()
+    return done(new Error("Logger does not have the right configuration"));
+  });
 });

@@ -97,7 +97,10 @@ module.exports = function(cms){
     logger.getLevel = function(){
       return _level;
     };
-    logger.setLevel(opts.level || ext.config.defaultLevel);
+    var l;
+    if(opts.level || opts.level===0) l = opts.level;
+    else l = ext.config.defaultLevel;
+    logger.setLevel(l);
     logger.log = log;
     loggers[name] = logger;
     return logger;
