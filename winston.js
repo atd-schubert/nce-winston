@@ -70,8 +70,8 @@ module.exports = function(cms){
 //# Private declarations:
   var loggers = {};
   var pipeLogger = function(logger, type){
-    return function(message){
-      logger(type, message);
+    return function(message, meta){
+      logger(type, message. meta);
     };
   };
 
@@ -83,9 +83,9 @@ module.exports = function(cms){
     var logger = {};
     var hash;
     
-    var log = function(type, message) {
+    var log = function(type, message, meta) {
       if(ext.config.levels[type]<_level) return;
-      ext.logger.log(type, name+": "+message);
+      ext.logger.log(type, name+": "+message, meta);
     };
     
     for (hash in ext.config.levels) logger[hash] = pipeLogger(log, hash);
