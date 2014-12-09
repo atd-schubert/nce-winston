@@ -71,7 +71,7 @@ module.exports = function(cms){
   var loggers = {};
   var pipeLogger = function(logger, type){
     return function(message, meta){
-      logger(type, message. meta);
+      logger.log(type, message. meta);
     };
   };
 
@@ -88,7 +88,7 @@ module.exports = function(cms){
       ext.logger.log(type, name+": "+message, meta);
     };
     
-    for (hash in ext.config.levels) logger[hash] = pipeLogger(log, hash);
+    for (hash in ext.config.levels) logger[hash] = pipeLogger(logger, hash);
     
     logger.setLevel = function(level){
       if(typeof level === "string") level = ext.config.levels[level];
