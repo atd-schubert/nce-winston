@@ -71,7 +71,8 @@ module.exports = function(cms){
   var loggers = {};
   var pipeLogger = function(logger, type){
     return function(message, meta){
-      logger.log(type, message. meta);
+      if(typeof meta === "undefined") return logger.log(type, message);
+      logger.log(type, message, meta);
     };
   };
 
