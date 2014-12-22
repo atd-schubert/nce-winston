@@ -114,6 +114,9 @@ module.exports = function(cms){
   ext.getLevel = function(name){
     return ext.getLogger(name).getLevel(level);
   };
+  ext.removeLogger = function(name){
+    delete loggers[name];
+  };
   
   return ext;
 }
