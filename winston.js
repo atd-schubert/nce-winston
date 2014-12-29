@@ -2,13 +2,13 @@
 
 var winston = require("winston");
 
-module.exports = function(cms){
-  if(!cms) throw new Error("You have to specify the cms object");
+module.exports = function(nce){
+  if(!nce) throw new Error("You have to specify the nce object");
   
 //# Mandantory Setup:
-  var ext = cms.createExtension({package: require("./package.json")});
+  var ext = nce.createExtension({package: require("./package.json")});
   
-  ext.on("install", function(event){ // set options, but don't run or make available in cms
+  ext.on("install", function(event){ // set options, but don't run or make available in nce
     //# Seting extension-config:
     ext.config.levels = ext.config.levels || {
       trace: 0,
@@ -54,7 +54,7 @@ module.exports = function(cms){
     
   });
   
-  ext.on("activate", function(event){ // don't set options, just run, make available in cms or register.
+  ext.on("activate", function(event){ // don't set options, just run, make available in nce or register.
 	  ext.logger = new (winston.Logger)({
       levels: ext.config.levels,
       colors: ext.config.colors
