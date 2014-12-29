@@ -1,6 +1,6 @@
 {
   "name": "nce-winston",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A logger for the nce cms",
   "main": "winston.js",
   "scripts": {
